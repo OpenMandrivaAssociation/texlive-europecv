@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/europecv
+# catalog-date 2006-12-09 23:51:48 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-europecv
 Version:	20061209
 Release:	1
@@ -99,6 +105,7 @@ and koi8-r.
 %doc %{_texmfdistdir}/doc/latex/europecv/templates/cv_template_pl.pdf
 %doc %{_texmfdistdir}/doc/latex/europecv/templates/cv_template_pl.tex
 %doc %{_texmfdistdir}/doc/latex/europecv/templates/publications.bib
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -109,3 +116,5 @@ and koi8-r.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
