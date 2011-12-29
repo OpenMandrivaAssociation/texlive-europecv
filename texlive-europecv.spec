@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The europecv class is an unofficial LaTeX implementation of the
@@ -30,20 +28,12 @@ has localisations for all the official languages of the EU
 (plus Catalan), as well as options permitting input in UTF-8
 and koi8-r.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -106,7 +96,6 @@ and koi8-r.
 %doc %{_texmfdistdir}/doc/latex/europecv/templates/cv_template_pl.pdf
 %doc %{_texmfdistdir}/doc/latex/europecv/templates/cv_template_pl.tex
 %doc %{_texmfdistdir}/doc/latex/europecv/templates/publications.bib
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -117,5 +106,3 @@ and koi8-r.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
