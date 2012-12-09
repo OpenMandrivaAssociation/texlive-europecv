@@ -106,3 +106,17 @@ and koi8-r.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20061209-2
++ Revision: 751666
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20061209-1
++ Revision: 718390
+- texlive-europecv
+- texlive-europecv
+- texlive-europecv
+- texlive-europecv
+
