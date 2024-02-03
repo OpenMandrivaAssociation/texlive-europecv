@@ -1,6 +1,6 @@
 Name:		texlive-europecv
-Version:	64037
-Release:	2
+Version:	69661
+Release:	1
 Summary:	Unofficial class for European curricula vitae
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/europecv
